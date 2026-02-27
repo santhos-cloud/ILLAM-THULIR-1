@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ILLAM THULIR FABRICS – Admin</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-main">
+      <section class="admin-dashboard" id="adminDashboard">
+        <header class="admin-header">
+          <div>
+            <h1>Product manager</h1>
+            <p>Create, update and delete products shown on the storefront.</p>
+          </div>
+          <div class="admin-header-actions">
+            <button id="adminExportBtn" class="btn btn-outline">Export JSON</button>
+            <label class="btn btn-ghost file-label">
+              Import JSON
+              <input type="file" id="adminImportInput" accept="application/json" hidden />
+            </label>
+            <button id="adminLogoutBtn" class="btn btn-text">Logout</button>
+          </div>
+        </header>
+
+        <div class="admin-layout">
+          <section class="admin-form-section">
+            <h2 id="adminFormTitle">Add new product</h2>
+            <form id="productForm">
+              <input type="hidden" id="productId" />
+
+              <label class="field">
+                <span>Name</span>
+                <input type="text" id="productName" class="input" required />
+              </label>
+
+              <label class="field">
+                <span>Description</span>
+                <textarea id="productDescription" class="input" rows="3"></textarea>
+              </label>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>Price (₹)</span>
+                  <input type="number" id="productPrice" class="input" min="0" step="0.01" required />
+                </label>
+                <label class="field">
+                  <span>Category</span>
+                  <select id="productCategory" class="input" required>
+                    <option value="">Select</option>
+                    <option value="Ethnic Wear">Ethnic Wear</option>
+                    <option value="Casuals">Casuals</option>
+                    <option value="Kids">Kids</option>
+                    <option value="Maternity">Maternity</option>
+                    <option value="Best Deals">Best Deals</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Sizes (comma separated, e.g. S,M,L,XL)</span>
+                <input type="text" id="productSizes" class="input" />
+              </label>
+
+              <label class="field">
+                <span>Image path (from assets/, e.g. assets/kurtaset1.jpg)</span>
+                <input type="text" id="productImage" class="input" />
+              </label>
+
+              <label class="field-checkbox">
+                <input type="checkbox" id="productBestDeal" />
+                <span>Mark as Best Deal / Featured</span>
+              </label>
+
+              <div class="admin-form-actions">
+                <button type="submit" class="btn btn-primary" id="productSaveBtn">Save product</button>
+                <button type="button" class="btn btn-ghost" id="productResetBtn">Clear form</button>
+              </div>
+
+              <p id="productFormError" class="form-error" aria-live="polite"></p>
+              <p id="productFormSuccess" class="form-success" aria-live="polite"></p>
+            </form>
+          </section>
+
+          <section class="admin-form-section">
+            <h2>Site settings</h2>
+            <form id="settingsForm">
+              <label class="field">
+                <span>Brand name</span>
+                <input type="text" id="setBrandName" class="input" />
+              </label>
+              <label class="field">
+                <span>Logo URL (optional)</span>
+                <input type="text" id="setLogoUrl" class="input" />
+              </label>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Phone number</span>
+                  <input type="text" id="setPhone" class="input" />
+                </label>
+                <label class="field">
+                  <span>WhatsApp number</span>
+                  <input type="text" id="setWhatsApp" class="input" />
+                </label>
+              </div>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" id="setEmail" class="input" />
+              </label>
+              <label class="field">
+                <span>Address</span>
+                <textarea id="setAddress" class="input" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Instagram link</span>
+                <input type="text" id="setInstagram" class="input" />
+              </label>
+              <label class="field">
+                <span>Hero banner title</span>
+                <input type="text" id="setHeroTitle" class="input" />
+              </label>
+              <label class="field">
+                <span>Hero banner subtitle</span>
+                <textarea id="setHeroSubtitle" class="input" rows="2"></textarea>
+              </label>
+              <label class="field">
+                <span>Shipping time text</span>
+                <textarea id="setShippingText" class="input" rows="2"></textarea>
+              </label>
+              <label class="field">
+                <span>No-return policy text</span>
+                <textarea id="setNoReturnText" class="input" rows="3"></textarea>
+              </label>
+              <label class="field">
+                <span>Payment instructions</span>
+                <textarea id="setPaymentInstructions" class="input" rows="3"></textarea>
+              </label>
+              <div class="field">
+                <span>Payment QR code (upload or URL)</span>
+                <input type="file" id="setQrFile" accept="image/*" />
+              </div>
+              <label class="field">
+                <span>Payment QR code URL (optional)</span>
+                <input type="text" id="setQrUrl" class="input" />
+              </label>
+              <div class="field">
+                <span>Current QR preview</span>
+                <img id="qrPreview" alt="Current payment QR" style="max-width:160px;border-radius:12px;border:1px solid var(--color-border);" />
+              </div>
+              <div class="admin-form-actions">
+                <button type="submit" class="btn btn-primary">Save settings</button>
+              </div>
+              <p id="settingsFormError" class="form-error" aria-live="polite"></p>
+              <p id="settingsFormSuccess" class="form-success" aria-live="polite"></p>
+            </form>
+          </section>
+
+          <section class="admin-list-section">
+            <h2>All products</h2>
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Sizes</th>
+                    <th>Best deal</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="adminProductsBody">
+                  <!-- Filled via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/admin-protect.js"></script>
+    <script type="module" src="js/admin.js"></script>
+  </body>
+  </html>
+

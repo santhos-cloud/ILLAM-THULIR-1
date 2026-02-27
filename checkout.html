@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ILLAM THULIR FABRICS – Checkout</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-logo">IT</span>
+          <div class="brand-text">
+            <span class="brand-name">ILLAM THULIR FABRICS</span>
+            <span class="brand-tagline">Graceful styles for every moment</span>
+          </div>
+        </div>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Shop</a>
+          <a href="index.html#categories" class="nav-link">Categories</a>
+          <a href="index.html#reviews" class="nav-link">Reviews</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="cart.html" class="nav-link nav-cart">
+            <span>Cart</span>
+            <span class="cart-count-badge" id="navCartCount">0</span>
+          </a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="section section-tight">
+        <div class="container">
+          <div class="section-header">
+            <h1>Checkout</h1>
+            <p>Share your details so we can confirm your order.</p>
+          </div>
+
+          <div class="checkout-layout" id="checkoutLayout">
+            <!-- Populated via checkout.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-logo small">IT</span>
+          <div class="brand-text">
+            <span class="brand-name">ILLAM THULIR FABRICS</span>
+            <span class="footer-location">Jallipatti, Sulur Thaluka, Coimbatore – 641671</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:thulirfabrics28@gmail.com">Email</a>
+          <a href="https://wa.me/9629226235" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/illam_thulir_fabrics" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-meta">
+          <span>&copy; <span id="year"></span> Illam Thulir Fabrics.</span>
+          <span>All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/9629226235?text=Hi%20ILLAM%20THULIR%20FABRICS%2C%20I%27d%20like%20to%20know%20more%20about%20your%20collections."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+    >
+      <span class="wa-icon"></span>
+    </a>
+
+    <script type="module" src="js/storefront.js"></script>
+    <script type="module" src="js/checkout.js"></script>
+  </body>
+  </html>
+

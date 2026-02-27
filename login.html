@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ILLAM THULIR FABRICS – Admin Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-main">
+      <section class="auth-card" aria-label="Admin login">
+        <div class="auth-header">
+          <div class="brand">
+            <span class="brand-logo">IT</span>
+            <div class="brand-text">
+              <span class="brand-name">ILLAM THULIR FABRICS</span>
+              <span class="brand-tagline">Admin access</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="loginSection">
+          <h1 class="auth-title">Admin login</h1>
+          <p class="auth-subtitle">Enter your admin details to manage the website.</p>
+
+          <form id="loginForm">
+            <label class="field">
+              <span>ID Number</span>
+              <input class="input" id="adminId" autocomplete="username" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input class="input" id="adminEmail" type="email" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input
+                class="input"
+                id="adminPassword"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+
+            <button class="btn btn-primary auth-btn" type="submit">Login</button>
+
+            <div class="auth-links">
+              <button type="button" class="btn btn-text" id="forgotLink">Forgot Password?</button>
+              <a class="btn btn-text" href="index.html">Back to home</a>
+            </div>
+
+            <p id="loginError" class="form-error" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div id="resetSection" class="hidden" aria-label="Password reset">
+          <h1 class="auth-title">Reset password</h1>
+          <p class="auth-subtitle" id="resetSubtitle">Follow the steps to update your password.</p>
+
+          <!-- Step 1 -->
+          <form id="resetStep1">
+            <label class="field">
+              <span>Enter your registered phone number</span>
+              <input class="input" id="resetPhone" type="tel" required />
+            </label>
+            <button class="btn btn-primary auth-btn" type="submit">Continue</button>
+            <p id="resetError1" class="form-error" aria-live="polite"></p>
+          </form>
+
+          <!-- Step 2 -->
+          <form id="resetStep2" class="hidden">
+            <label class="field">
+              <span>Enter your Admin ID Number</span>
+              <input class="input" id="resetAdminId" required />
+            </label>
+            <button class="btn btn-primary auth-btn" type="submit">Continue</button>
+            <p id="resetError2" class="form-error" aria-live="polite"></p>
+          </form>
+
+          <!-- Step 3 -->
+          <form id="resetStep3" class="hidden">
+            <label class="field">
+              <span>New Password</span>
+              <input class="input" id="newPassword" type="password" required />
+            </label>
+            <label class="field">
+              <span>Confirm Password</span>
+              <input class="input" id="confirmPassword" type="password" required />
+            </label>
+            <button class="btn btn-primary auth-btn" type="submit">Update password</button>
+            <p id="resetError3" class="form-error" aria-live="polite"></p>
+            <p id="resetSuccess" class="form-success" aria-live="polite"></p>
+          </form>
+
+          <div class="auth-links">
+            <button type="button" class="btn btn-text" id="backToLogin">Back to login</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/login.js"></script>
+  </body>
+  </html>
+
