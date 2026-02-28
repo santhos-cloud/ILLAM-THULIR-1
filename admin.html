@@ -63,10 +63,19 @@
                 <input type="text" id="productSizes" class="input" />
               </label>
 
-              <label class="field">
-                <span>Image path (from assets/, e.g. assets/kurtaset1.jpg)</span>
-                <input type="text" id="productImage" class="input" />
-              </label>
+              <input type="hidden" id="productImage" />
+              <div class="field">
+                <span>Product image</span>
+                <input type="file" id="productImageFile" accept="image/*" />
+              </div>
+              <div class="field">
+                <span>Current image preview</span>
+                <img
+                  id="productImagePreview"
+                  alt="Current product image"
+                  style="max-width:160px;border-radius:12px;border:1px solid var(--color-border);"
+                />
+              </div>
 
               <label class="field-checkbox">
                 <input type="checkbox" id="productBestDeal" />
@@ -90,10 +99,10 @@
                 <span>Brand name</span>
                 <input type="text" id="setBrandName" class="input" />
               </label>
-              <label class="field">
-                <span>Logo URL (optional)</span>
-                <input type="text" id="setLogoUrl" class="input" />
-              </label>
+              <div class="field">
+                <span>Logo image (optional)</span>
+                <input type="file" id="setLogoFile" accept="image/*" />
+              </div>
               <div class="field-grid">
                 <label class="field">
                   <span>Phone number</span>
@@ -136,6 +145,14 @@
                 <span>Payment instructions</span>
                 <textarea id="setPaymentInstructions" class="input" rows="3"></textarea>
               </label>
+              <div class="field">
+                <span>Current logo preview</span>
+                <img
+                  id="logoPreview"
+                  alt="Current logo"
+                  style="max-width:160px;border-radius:12px;border:1px solid var(--color-border);"
+                />
+              </div>
               <div class="field">
                 <span>Payment QR code (upload or URL)</span>
                 <input type="file" id="setQrFile" accept="image/*" />
